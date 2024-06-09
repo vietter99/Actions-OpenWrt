@@ -20,11 +20,6 @@ on:
         description: "SSH connection to Actions"
         required: false
         default: "false"
-
-  watch:
-   types: started
-permissions:
-  contents: write
 env:
   REPO_URL: git clone https://github.com/vietter99/x-wrt.git
   REPO_BRANCH: v23.10byviet
