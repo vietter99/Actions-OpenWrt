@@ -21,8 +21,8 @@ on:
         required: false
         default: "false"
 env:
-  REPO_URL: git clone https://github.com/vietter99/x-wrt.git
-  REPO_BRANCH: v23.10byviet
+  REPO_URL: https://github.com/coolsnowwolf/lede.git
+  REPO_BRANCH: lede
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
