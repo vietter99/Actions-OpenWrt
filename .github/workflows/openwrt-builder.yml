@@ -68,6 +68,49 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
+      - name: Add luci-theme-argon
+        run: |
+          cd lede
+          git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+          pushd package/luci-theme-argon
+          umask 022
+          git checkout
+          popd
+      - name: Add luci-app-cpu-status
+        run: |
+         cd lede
+git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/gSpotx2f/luci-app-cpu-status.git package/luci-app-cpu-status
+pushd package/luci-app-cpu-status
+umask 022
+git checkout
+popd
+
+      - name: Add luci-app-internet-detector
+        run: |
+          cd lede
+git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/gSpotx2f/luci-app-internet-detector.git package/luci-app-internet-detector
+pushd package/luci-app-internet-detector
+umask 022
+git checkout
+popd
+      
+      - name: Add luci-app-sms-tool
+        run: |
+          cd lede
+git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/4IceG/luci-app-sms-tool.git package/luci-app-sms-tool
+pushd package/luci-app-sms-tool
+umask 022
+git checkout
+popd
+      - name: Add luci-app-tinyfilemanager
+        run: |
+          cd lede
+git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/muink/luci-app-tinyfilemanager.git package/luci-app-tinyfilemanager
+pushd package/luci-app-tinyfilemanager
+umask 022
+git checkout
+popd
+
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
